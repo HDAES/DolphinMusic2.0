@@ -3,6 +3,10 @@ import 'package:provider/provider.dart';
 import 'package:dolphinmusic/common/values/values.dart';
 import 'package:dolphinmusic/provider/provider.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:dolphinmusic/common/apis/apis.dart';
+import 'package:dolphinmusic/model/model.dart';
+
+
 
 //构建动画
 class StaggerAnimation extends StatelessWidget {
@@ -202,9 +206,7 @@ class _LoginWidgetState extends State<LoginWidget> {
     );
   }
 
-  void  login(){
-    //Application.router.navigateTo(context, '/index');
-    // print(passwordController.text);
-    // NetReq.login(context,phoneController.text,passwordController.text);
+  void  login() async{
+    await UserApi.login(context: context,params: {'phone':phoneController.text,'password':passwordController.text});
   }
 }

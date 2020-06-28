@@ -1,3 +1,9 @@
+/*
+ * @Descripttion: 
+ * @Author: Hades
+ * @Date: 2020-06-28 21:31:34
+ * @LastEditTime: 2020-06-28 21:37:22
+ */ 
 import 'package:dolphinmusic/model/model.dart';
 import 'package:dolphinmusic/common/utils/utils.dart';
 import 'package:dolphinmusic/common/values/values.dart';
@@ -12,13 +18,14 @@ class Global {
    /// 是否离线登录
   static bool isOfflineLogin = false;
 
-  static ThemeState appState = ThemeState();
+  static ThemeState appState = ThemeState(themeKey: 0);
   /// init
   static Future init() async {
      // 运行初始
     WidgetsFlutterBinding.ensureInitialized();
     //工具初始
     await StorageUtil.init();
+    HttpUtil();
     //获取主题颜色
     appState.getLocalThemeColor(true);
     // 读取离线用户信息

@@ -3,16 +3,20 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:dio_cookie_manager/dio_cookie_manager.dart';
 import 'package:cookie_jar/cookie_jar.dart';
+import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
-import '../../common/widgets/widgets.dart';
+import 'package:dolphinmusic/global.dart';
+import 'package:dolphinmusic/common/widgets/widgets.dart';
+import 'package:dolphinmusic/common/values/values.dart';
 
-const SERVER_API_URL = 'https://api.guaik.org/mock/74';
+
 
 class HttpUtil {
   static HttpUtil _instance = HttpUtil._internal();
   factory HttpUtil() => _instance;
 
   static Dio dio;
+  CancelToken cancelToken = new CancelToken();
 
   HttpUtil._internal() {
     // BaseOptions、Options、RequestOptions 都可以配置参数，优先级别依次递增，且可以根据优先级别覆盖参数
@@ -85,16 +89,54 @@ class HttpUtil {
 
 
   /// 读取本地配置
-  // Map<String, dynamic> getAuthorizationHeader() {
-  //   var headers;
-  //   String accessToken = Global.profile?.accessToken;
-  //   if (accessToken != null) {
-  //     headers = {
-  //       'Authorization': 'Bearer $accessToken',
-  //     };
-  //   }
-  //   return headers;
-  // }
+  Map<String, dynamic> getAuthorizationHeader() {
+    var headers;
+    String token = Global.profile?.token;
+    if (token != null) {
+      headers = {
+        'Authorization': 'Bearer $token',
+      };
+    }
+    return headers;
+  }
+
+  /// restful get 操作
+  /// refresh 是否下拉刷新 默认 false
+  /// noCache 是否不缓存 默认 true
+  /// list 是否列表 默认 false
+  /// cacheKey 缓存key
+  /// cacheDisk 是否磁盘缓存
+  Future get(
+    String path,{
+      @required BuildContext context,
+      dynamic params,
+      Options options,
+      bool refresh = false,
+      bool list = false,
+      bool noCache = true,
+      String cacheKey,
+      bool cacheDisk = false,
+    }
+  ) async {
+    Options requestOptions = options ?? Options();
+     requestOptions = requestOptions.merge(extra: {
+      "context": context,
+      "refresh": refresh,
+      "noCache": noCache,
+      "list": list,
+      "cacheKey": cacheKey,
+      "cacheDisk": cacheDisk,
+    });
+    Map<String, dynamic> _authorization = getAuthorizationHeader();
+    if (_authorization != null) {
+      requestOptions = requestOptions.merge(headers: _authorization);
+    }
+    var response = await dio.get(path,
+        queryParameters: params,
+        options: requestOptions,
+        cancelToken: cancelToken);
+    return response.data;
+  }
 }
 
 //错误处理
