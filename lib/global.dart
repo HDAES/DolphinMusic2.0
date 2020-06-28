@@ -12,7 +12,7 @@ class Global {
    /// 是否离线登录
   static bool isOfflineLogin = false;
 
-  static ThemeState appState = ThemeState(themeKey:0);
+  static ThemeState appState = ThemeState();
   /// init
   static Future init() async {
      // 运行初始
