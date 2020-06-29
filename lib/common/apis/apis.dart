@@ -7,3 +7,4 @@
 
 library apis;
 export 'user.dart';
+export 'discovery.dart';

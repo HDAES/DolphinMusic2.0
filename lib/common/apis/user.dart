@@ -1,9 +1,4 @@
-/*
- * @Descripttion: 
- * @Author: Hades
- * @Date: 2020-06-28 21:53:24
- * @LastEditTime: 2020-06-28 22:42:58
- */ 
+
 import 'package:flutter/material.dart';
 import 'package:dolphinmusic/common/utils/utils.dart';
 import 'package:dolphinmusic/model/model.dart';

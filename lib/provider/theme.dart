@@ -16,7 +16,6 @@ class ThemeState  with ChangeNotifier {
   int themeKey=0;
   
   void changeThemeColor(int key) async{
-   
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setInt('themeColor', key);
     
@@ -24,6 +23,9 @@ class ThemeState  with ChangeNotifier {
     notifyListeners();
   }
 
+  getThemeColor() {
+    return themeColors[themeKey];
+  }
   //获取本地保存的颜色
   getLocalThemeColor(needNotify) async{
     SharedPreferences prefs = await SharedPreferences.getInstance();
