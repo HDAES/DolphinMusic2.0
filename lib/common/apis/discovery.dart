@@ -1,3 +1,9 @@
+/*
+ * @Descripttion: 
+ * @Author: Hades
+ * @Date: 2020-06-29 20:44:27
+ * @LastEditTime: 2020-06-29 22:46:52
+ */ 
 import 'package:flutter/material.dart';
 import 'package:dolphinmusic/common/utils/utils.dart';
 import 'package:dolphinmusic/model/model.dart';
@@ -35,5 +41,13 @@ class DiscoveryApi {
       context: context,
     );
     return RecaAbumsListModel.fromJson(response);
+  }
+  ///推荐mv
+  static Future<RecMvModel> getRecMvList({@required BuildContext context}) async{
+    var response = await HttpUtil().get(
+      '/personalized/mv',
+      context: context,
+    );
+    return RecMvModel.fromJson(response);
   }
 }

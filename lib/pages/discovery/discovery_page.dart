@@ -3,6 +3,7 @@ import 'package:dolphinmusic/pages/discovery/discovery_banner.dart';
 import 'package:dolphinmusic/pages/discovery/discovery_nav.dart';
 import 'package:dolphinmusic/pages/discovery/discovery_rec_song_list.dart';
 import 'package:dolphinmusic/pages/discovery/discovery_music_album.dart';
+import 'package:dolphinmusic/pages/discovery/discovery_mv.dart';
 class DiscoveryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -11,7 +12,8 @@ class DiscoveryPage extends StatelessWidget {
         DiscoveryBanner(),
         DiscoveryNav(),
         DiscoveryRecSongList(),
-        DiscoveryMusicAlbum()
+        DiscoveryMusicAlbum(),
+        DiscoveryMv()
       ],
     );
   }
