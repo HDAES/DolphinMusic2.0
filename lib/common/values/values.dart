@@ -9,3 +9,4 @@ library values;
 export 'storage.dart';
 export 'image.dart';
 export 'server.dart';
+export 'colors.dart';

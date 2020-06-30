@@ -41,6 +41,8 @@ dependencies:
   provider: ^4.1.3
   # 轮播图
   flutter_swiper: ^1.1.6
+  # 折叠面板
+  expandable: ^4.1.4
   cupertino_icons: ^0.1.3
 
 dev_dependencies:
@@ -66,6 +68,11 @@ flutter:
     - assets/images/icon_playlist.png
     - assets/images/icon_radio.png
     - assets/images/icon_rank.png
+    - assets/images/icon_broadcast.png
+    - assets/images/icon_collect.png
+    - assets/images/icon_download_black.png
+    - assets/images/icon_late_play.png
+    - assets/images/icon_music.png
   
 
   # An image asset can refer to one or more resolution-specific "variants", see

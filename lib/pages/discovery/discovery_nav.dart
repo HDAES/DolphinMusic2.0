@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:dolphinmusic/common/values/values.dart';
 import 'package:dolphinmusic/global.dart';
-import 'package:dolphinmusic/common/apis/apis.dart';
-import 'package:dolphinmusic/common/utils/utils.dart';
-import 'package:flutter_swiper/flutter_swiper.dart';
 
 
-class DiscoveryNav extends StatelessWidget {
 
+class DiscoveryNav extends StatefulWidget {
+  @override
+  _DiscoveryNavState createState() => _DiscoveryNavState();
+}
+
+class _DiscoveryNavState extends State<DiscoveryNav> {
   final List<Map> nav=[
     {"id":2,'icon':P.icon_playlist,'name':'歌单'},
     {"id":3,'icon':P.icon_rank,'name':'排行榜'},

@@ -12,3 +12,4 @@ export 'rec_song_list.dart';
 export 'rec_music_list.dart';
 export 'rec_albums_list.dart';
 export 'rec_mv_list.dart';
+export 'mine_song_list.dart';

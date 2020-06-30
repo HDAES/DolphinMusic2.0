@@ -1,3 +1,4 @@
+import 'package:dolphinmusic/common/values/values.dart';
 import 'package:flutter/material.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:provider/provider.dart';
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
         iconTheme: IconThemeData(color:Global.appState.getThemeColor())
       ),
       home: Scaffold(
+        backgroundColor: AppColors.primaryBackground,
         body: Global.isOfflineLogin?IndexPage():LoginPage(),
       )
     );
