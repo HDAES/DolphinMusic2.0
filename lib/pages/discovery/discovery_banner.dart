@@ -9,9 +9,17 @@ import 'package:dolphinmusic/common/apis/apis.dart';
 import 'package:dolphinmusic/common/utils/utils.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
-class DiscoveryBanner extends StatelessWidget {
+class DiscoveryBanner extends StatefulWidget {
   @override
+  _DiscoveryBannerState createState() => _DiscoveryBannerState();
+}
+
+class _DiscoveryBannerState extends State<DiscoveryBanner> with AutomaticKeepAliveClientMixin{
+ 
+  @override
+  bool get wantKeepAlive => true;
   Widget build(BuildContext context) {
+    super.build(context);
     return FutureBuilder(
       future: getBanner(context),
       builder: (BuildContext context, AsyncSnapshot snapshot){
