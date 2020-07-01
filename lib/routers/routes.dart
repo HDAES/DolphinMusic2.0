@@ -1,10 +1,11 @@
 import 'package:dolphinmusic/routers/application.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
+import 'package:dolphinmusic/routers/router_handler.dart';
 
 class Routes {
   static Router router;
-
+  static String hotwall = '/hotwall';
 
   static void configRoutes(Router router){
     router.notFoundHandler = new Handler(
@@ -13,7 +14,12 @@ class Routes {
         return ;
       }
     );
+
+
+    router.define(hotwall, handler: hotWallHandler);   //首页
   }
+
+  
 
   // 对参数进行encode，解决参数中有特殊字符，影响fluro路由匹配
   static Future navigateTo(BuildContext context, String path, {Map<String, dynamic> params, TransitionType transition = TransitionType.native}) {

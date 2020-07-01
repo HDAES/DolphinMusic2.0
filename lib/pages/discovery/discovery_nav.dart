@@ -48,7 +48,7 @@ class _DiscoveryNavState extends State<DiscoveryNav> {
                     ],
                   ),
                   Positioned(
-                    left:dateTime.day>10?20:23,
+                    left:dateTime.day>10?20:24,
                     top: 19,
                     child: Text('${dateTime.day}',style: TextStyle(color: Global.appState.getThemeColor(),fontWeight: FontWeight.bold)),
                   )
