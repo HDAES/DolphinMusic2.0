@@ -275,7 +275,13 @@ Widget _event(context){
           return Container(
             child: Column(
               children: data.map((item){
-                return Text('123');
+                return Container(
+                  child: Column(
+                    children: <Widget>[
+                      
+                    ],
+                  ),
+                );
               }).toList(),
             ),
           );
