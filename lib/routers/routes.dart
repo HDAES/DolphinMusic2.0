@@ -6,6 +6,7 @@ import 'package:dolphinmusic/routers/router_handler.dart';
 class Routes {
   static Router router;
   static String hotwall = '/hotwall';
+  static String me = '/me';
 
   static void configRoutes(Router router){
     router.notFoundHandler = new Handler(
@@ -17,6 +18,7 @@ class Routes {
 
 
     router.define(hotwall, handler: hotWallHandler);   //首页
+    router.define(me, handler: meHandler);   //首页
   }
 
   

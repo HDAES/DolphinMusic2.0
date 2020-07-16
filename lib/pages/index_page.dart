@@ -1,4 +1,6 @@
 
+import 'package:dolphinmusic/global.dart';
+import 'package:dolphinmusic/routers/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:dolphinmusic/common/utils/utils.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -24,22 +26,22 @@ class _IndexPageState extends State<IndexPage> {
   Widget build(BuildContext context) {
     ScreenUtil.init(width: 750, height: 1334);
     return SafeArea(
-      child:Column(
-        children: <Widget>[
-          _header (),
-          Expanded(
-            child: IndexedStack(
-              index: currentIndex,
-              children: <Widget>[
-                DiscoveryPage(),
-                MinePage(),
-                DynamicPage()
-              ],
-            ),
-          ) 
-        ],
-      )
-    );
+        child:Column(
+          children: <Widget>[
+            _header (),
+            Expanded(
+              child: IndexedStack(
+                index: currentIndex,
+                children: <Widget>[
+                  DiscoveryPage(),
+                  MinePage(),
+                  DynamicPage()
+                ],
+              ),
+            ) 
+          ],
+        )
+      );
   }
 
   Widget _header (){
@@ -51,7 +53,12 @@ class _IndexPageState extends State<IndexPage> {
       child:Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          Text('touxiao'),
+          GestureDetector(
+            onTap: (){Routes.navigateTo(context,Routes.me);},
+            child: ClipOval(
+              child: Image.network(Global.profile.profile.avatarUrl,width: 40),
+            ),
+          ),
           Row(
             children: <Widget>[
               GestureDetector(
@@ -71,7 +78,7 @@ class _IndexPageState extends State<IndexPage> {
               ),
             ],
           ),
-          Text('search')
+          Icon(Icons.search)
         ],
       ),
     );

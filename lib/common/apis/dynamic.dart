@@ -13,4 +13,13 @@ class DynamicApi{
     );
     return HotWallModel.fromJson(response);
   }
+
+  ///热门话题
+  static Future<HotTopicModel> getHotTopic({@required BuildContext context}) async{
+     var response = await HttpUtil().get(
+      '/hot/topic',
+      context: context,
+    );
+    return HotTopicModel.fromJson(response);
+  }
 }

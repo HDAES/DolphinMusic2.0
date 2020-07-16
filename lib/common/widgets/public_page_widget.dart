@@ -1,4 +1,5 @@
 
+import 'package:dolphinmusic/common/utils/screen.dart';
 import 'package:flutter/material.dart';
 class PublicPageWidget extends StatefulWidget {
   final  Widget widget;

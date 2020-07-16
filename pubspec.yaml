@@ -43,6 +43,10 @@ dependencies:
   flutter_swiper: ^1.1.6
   # 折叠面板
   expandable: ^4.1.4
+  flutter_zoom_drawer: "^1.0.4"
+  # tab
+  motion_tab_bar: ^0.1.5
+
   cupertino_icons: ^0.1.3
 
 dev_dependencies:

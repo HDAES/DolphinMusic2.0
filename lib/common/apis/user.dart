@@ -1,4 +1,5 @@
 
+import 'package:dolphinmusic/common/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:dolphinmusic/common/utils/utils.dart';
 import 'package:dolphinmusic/model/model.dart';
@@ -16,8 +17,11 @@ class  UserApi {
       context: context,
       params: params,
     );
+    print(response);
     if(response['code']==200){
+      Toast.show('登录成功');
       StorageUtil().setJSON(STORAGE_USER_PROFILE_KEY,response);
+      
     }
     return UserModel.fromJson(response);
   }

@@ -9,4 +9,7 @@ class AppColors {
 
   ///间隔灰
   static const Color interval = Color.fromRGBO(240, 240, 240, 1);
+
+  ///背景色
+  static const Color backColor = Color.fromRGBO(247, 247, 247, 1);
 }
