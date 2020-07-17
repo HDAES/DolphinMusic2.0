@@ -314,9 +314,12 @@ Widget _mine(context){
         )
       );
     },
-  );
-  
+  ); 
 }
+
+
+
+
 
 Widget _event(context){
   return FutureBuilder(
@@ -542,7 +545,7 @@ Widget filterWidget(item){
   }
 }
 
-   Widget _createList(item){
+  Widget _createList(item){
     return Column(
       children: <Widget>[
         for(int i=0;i<item.playlist.length;i++)
@@ -552,7 +555,6 @@ Widget filterWidget(item){
       ],
     );
   }
-
 
   Widget _collectList(item){
     return Column(
