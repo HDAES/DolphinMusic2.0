@@ -1,3 +1,4 @@
+import 'package:dolphinmusic/provider/provider.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:dolphinmusic/common/utils/utils.dart';
@@ -5,6 +6,7 @@ import 'package:dolphinmusic/global.dart';
 import 'package:dolphinmusic/common/apis/apis.dart';
 import 'package:dolphinmusic/model/model.dart';
 import 'package:dolphinmusic/common/values/values.dart';
+import 'package:provider/provider.dart';
 
 class MineCreate extends StatefulWidget {
   @override
@@ -156,6 +158,8 @@ class _MineCreateState extends State<MineCreate> {
   }
 
   Future<MineSongListModel> getData(context) async{
-    return  MineApi.getUserSongList(context: context);
+    MineSongListModel list = await MineApi.getUserSongList(context: context);
+    Provider.of<PlayListProvider>(context,listen: false).setPlaylist(list);
+    return  list;
   }
 }

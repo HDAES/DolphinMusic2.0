@@ -31,9 +31,14 @@ class _DynamicHotWallState extends State<DynamicHotWall> {
                     Icon(Icons.chevron_right,color: Colors.white)
                   ],
                 ),
-                Text('${Global.profile.profile.nickname}，原来大家都在云村看这些评论！',
-                  style: TextStyle(color: Colors.white),
-                )
+                Container(
+                  width: duSetWidth(540),
+                  child: Text('${Global.profile.profile.nickname}，原来大家都在云村看这些评论！',
+                    style: TextStyle(color: Colors.white),
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 1
+                  ),
+                )  
               ],
             ),
             Column(

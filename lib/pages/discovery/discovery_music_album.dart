@@ -112,7 +112,7 @@ class _DiscoveryMusicAlbumState extends State<DiscoveryMusicAlbum> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      Text(item[index].name.length>15?item[index].name.substring(0, 15)+'...':item[index].name,style: TextStyle(color: Colors.black87,fontSize: duSetFontSize(28))),
+                      Text(item[index].name.length>8?item[index].name.substring(0, 8)+'...':item[index].name,style: TextStyle(color: Colors.black87,fontSize: duSetFontSize(28))),
                       Text(item[index].song?.artists[0].name,style: TextStyle(color: Colors.black45,fontSize: duSetFontSize(24)))
                     ],
                   ),
@@ -160,7 +160,7 @@ class _DiscoveryMusicAlbumState extends State<DiscoveryMusicAlbum> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      Text(item[index].name.length>15?item[index].name.substring(0, 15)+'...':item[index].name,style: TextStyle(color: Colors.black87,fontSize: duSetFontSize(28))),
+                      Text(item[index].name.length>12?item[index].name.substring(0, 12)+'...':item[index].name,style: TextStyle(color: Colors.black87,fontSize: duSetFontSize(28))),
                       Text(item[index].artist.name,style: TextStyle(color: Colors.black45,fontSize: duSetFontSize(24)))
                     ],
                   ),

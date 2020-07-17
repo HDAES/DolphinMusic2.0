@@ -37,14 +37,16 @@ class Events {
   User user;
   String json;
   int eventTime;
+  int type;
   Info info;
 
-  Events({this.user, this.json, this.eventTime, this.info});
+  Events({this.user, this.json, this.eventTime, this.info, this.type});
 
   Events.fromJson(Map<String, dynamic> jsons) {
     user = jsons['user'] != null ? new User.fromJson(jsons['user']) : null;
     json = jsons['json'];
     eventTime = jsons['eventTime'];
+    type = jsons['type'];
     info = jsons['info'] != null ? new Info.fromJson(jsons['info']) : null;
   }
 
@@ -55,6 +57,7 @@ class Events {
     }
     data['json'] = this.json;
     data['eventTime'] = this.eventTime;
+    data['type'] = this.type;
     if (this.info != null) {
       data['info'] = this.info.toJson();
     }

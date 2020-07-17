@@ -32,12 +32,12 @@ class _DiscoveryBannerState extends State<DiscoveryBanner> with AutomaticKeepAli
                 return Container(
                   margin: EdgeInsets.only(left:10,right:10),
                   decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  image: DecorationImage(
-                    image: NetworkImage("${snapshot.data.banners[index].pic}"),
-                    fit: BoxFit.fitHeight,
-                  )
-                ),
+                    borderRadius: BorderRadius.circular(10),
+                    image: DecorationImage(
+                      image: NetworkImage("${snapshot.data.banners[index].pic}"),
+                      fit: BoxFit.fitHeight,
+                    )
+                  ),
                 );
               },
               itemCount: snapshot.data.banners.length,

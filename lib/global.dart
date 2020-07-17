@@ -32,6 +32,7 @@ class Global {
     var _profileJSON = StorageUtil().getJSON(STORAGE_USER_PROFILE_KEY);
       if (_profileJSON != null) {
         profile = UserModel.fromJson(_profileJSON);
+        print(profile.account.id);
         isOfflineLogin = true;
       }
     }

@@ -5,7 +5,7 @@ import 'package:dolphinmusic/global.dart';
 import 'package:dolphinmusic/common/values/values.dart';
 
 class MeApi{
-  ///获取用户歌单
+  ///获取用户动态
   static Future<UserEventModel> getUserEvent({@required BuildContext context}) async{
      var response = await HttpUtil().get(
       '/user/event?uid=${Global.profile.account.id}',
