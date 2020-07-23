@@ -45,16 +45,23 @@ class _MePageState extends State<MePage> with SingleTickerProviderStateMixin{
               paddingTop: MediaQuery.of(context).padding.top,
             ),
           ),
-          SliverFillRemaining(
-            child: TabBarView(
-              controller: this.tabController,
-              children: <Widget>[
-                _mine(context),
-                _event(context)
-               
-              ],
+          SliverFixedExtentList(
+            itemExtent: 800,
+            //加载内容
+            delegate: SliverChildBuilderDelegate(
+                (context, index) {
+                  return TabBarView(
+                    controller: this.tabController,
+                    children: <Widget>[
+                      _mine(context),
+                      _event(context)
+                    ],
+                  );
+                },
+              //设置显示个数
+              childCount: 1,
             ),
-          )
+          ),
         ],
       ),
     );

@@ -16,3 +16,5 @@ export 'mine_song_list.dart';
 export 'hot_wall.dart';
 export 'hot_topic.dart';
 export 'me_user_event.dart';
+export 'every_day_recommend.dart';
+export 'new_albums.dart';

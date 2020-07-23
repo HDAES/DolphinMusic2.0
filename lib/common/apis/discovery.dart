@@ -50,4 +50,23 @@ class DiscoveryApi {
     );
     return RecMvModel.fromJson(response);
   }
+
+  /// 每日推荐
+ static Future<EveryDayModel> getEveryDay({@required BuildContext context}) async{
+    var response = await HttpUtil().get(
+      '/recommend/songs',
+      context: context,
+    );
+    return EveryDayModel.fromJson(response);
+  }
+
+  /// 推荐专辑
+ static Future<NewAlbumsModel> getNewAlbums({@required BuildContext context}) async{
+    var response = await HttpUtil().get(
+      '/album/newest',
+      context: context,
+    );
+    return NewAlbumsModel.fromJson(response);
+  }
+  
 }

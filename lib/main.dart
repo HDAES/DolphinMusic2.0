@@ -1,4 +1,5 @@
 import 'package:dolphinmusic/common/values/values.dart';
+import 'package:dolphinmusic/pages/demo/demo.dart';
 import 'package:dolphinmusic/provider/playlist.dart';
 import 'package:dolphinmusic/routers/application.dart';
 import 'package:dolphinmusic/routers/routes.dart';
@@ -39,6 +40,8 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         backgroundColor: AppColors.primaryBackground,
         body: Global.isOfflineLogin?IndexPage():LoginPage(),
+        //body: CustomSliverHeaderDemo(),
+        //body: MinePage(),
       )
     );
   }

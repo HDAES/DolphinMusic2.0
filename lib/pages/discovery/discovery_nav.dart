@@ -1,3 +1,4 @@
+import 'package:dolphinmusic/routers/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:dolphinmusic/common/values/values.dart';
 import 'package:dolphinmusic/global.dart';
@@ -25,7 +26,7 @@ class _DiscoveryNavState extends State<DiscoveryNav> {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           GestureDetector(
-            onTap: (){},
+            onTap: (){ Routes.navigateTo(context, Routes.everyDayRec);},
             child: Container(
               margin: EdgeInsets.only(top:15),
               child: Stack(

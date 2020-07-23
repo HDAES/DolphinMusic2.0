@@ -25,7 +25,8 @@ class _IndexPageState extends State<IndexPage> {
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(width: 750, height: 1334);
-    return SafeArea(
+    return Scaffold(
+      body: SafeArea(
         child:Column(
           children: <Widget>[
             _header (),
@@ -41,7 +42,8 @@ class _IndexPageState extends State<IndexPage> {
             ) 
           ],
         )
-      );
+      ),
+    );
   }
 
   Widget _header (){

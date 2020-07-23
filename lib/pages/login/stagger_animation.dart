@@ -1,3 +1,4 @@
+import 'package:dolphinmusic/global.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:dolphinmusic/common/values/values.dart';
@@ -207,6 +208,7 @@ class _LoginWidgetState extends State<LoginWidget> {
   }
 
   void  login() async{
-    await UserApi.login(context: context,params: {'phone':phoneController.text,'password':passwordController.text});
+    UserModel userModel = await UserApi.login(context: context,params: {'phone':phoneController.text,'password':passwordController.text});
+    Global.profile = userModel;
   }
 }
