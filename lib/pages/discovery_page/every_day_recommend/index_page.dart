@@ -41,7 +41,7 @@ class _EveryDayRecommendPageState extends State<EveryDayRecommendPage> with Sing
                   ),
                 ),
                 SliverFixedExtentList(
-                  itemExtent: 50,
+                  itemExtent: 60,
                   //加载内容
                   delegate: SliverChildBuilderDelegate(
                       (context, index) {

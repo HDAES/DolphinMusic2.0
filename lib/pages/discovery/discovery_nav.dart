@@ -1,3 +1,9 @@
+/*
+ * @Descripttion: 
+ * @Author: Hades
+ * @Date: 2020-07-23 22:30:13
+ * @LastEditTime: 2020-07-23 23:15:37
+ */ 
 import 'package:dolphinmusic/routers/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:dolphinmusic/common/values/values.dart';
@@ -12,10 +18,10 @@ class DiscoveryNav extends StatefulWidget {
 
 class _DiscoveryNavState extends State<DiscoveryNav> {
   final List<Map> nav=[
-    {"id":2,'icon':P.icon_playlist,'name':'歌单'},
-    {"id":3,'icon':P.icon_rank,'name':'排行榜'},
-    {"id":4,'icon':P.icon_radio,'name':'电台'},
-    {"id":5,'icon':P.icon_look,'name':'直播'},
+    {"id":2,'icon':P.icon_playlist,'name':'歌单',"routepath":Routes.songList},
+    {"id":3,'icon':P.icon_rank,'name':'排行榜',"routepath":Routes.songList},
+    {"id":4,'icon':P.icon_radio,'name':'电台',"routepath":Routes.songList},
+    {"id":5,'icon':P.icon_look,'name':'直播',"routepath":Routes.songList},
   ];
 
   DateTime dateTime= DateTime.now();
@@ -56,10 +62,10 @@ class _DiscoveryNavState extends State<DiscoveryNav> {
                 ],
               ),
             ),
-          )
-        ]+nav.map((item){
-          return GestureDetector(
-            onTap: (){ },
+          ),
+          for(int i=0;i<nav.length;i++)
+            GestureDetector(
+            onTap: (){  Routes.navigateTo(context, nav[i]['routepath']);},
             child: Container(
               margin: EdgeInsets.only(top:15),
               child: Column(
@@ -67,7 +73,7 @@ class _DiscoveryNavState extends State<DiscoveryNav> {
                   Container(
                     margin: EdgeInsets.only(bottom:5),
                     child: Image.asset(
-                      item['icon'],
+                      nav[i]['icon'],
                       width: 50,
                       height: 50,
                     ),
@@ -76,12 +82,12 @@ class _DiscoveryNavState extends State<DiscoveryNav> {
                       borderRadius: BorderRadius.circular(25)
                     ),
                   ),
-                  Text(item['name'],style: TextStyle(fontWeight: FontWeight.w600,color: Colors.black87))
+                  Text(nav[i]['name'],style: TextStyle(fontWeight: FontWeight.w600,color: Colors.black87))
                 ],
               ),
             )
-          );
-        }).toList(),
+          )
+        ],
       )
     );
   }

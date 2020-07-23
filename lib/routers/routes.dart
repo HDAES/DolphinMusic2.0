@@ -1,3 +1,9 @@
+/*
+ * @Descripttion: 
+ * @Author: Hades
+ * @Date: 2020-07-23 22:30:13
+ * @LastEditTime: 2020-07-23 23:08:14
+ */ 
 import 'package:dolphinmusic/routers/application.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
@@ -9,6 +15,7 @@ class Routes {
   static String hotwall = '/hotwall';
   static String me = '/me';
   static String everyDayRec = '/everyDayRec';
+  static String songList = '/songList';
 
   static void configRoutes(Router router){
     router.notFoundHandler = new Handler(
@@ -22,6 +29,7 @@ class Routes {
     router.define(hotwall, handler: hotWallHandler);   //首页
     router.define(me, handler: meHandler);   //首页
     router.define(everyDayRec, handler: everyDayRecHandler);   //每日推荐
+    router.define(songList, handler: songListHandler);  //歌单广场
   }
 
   

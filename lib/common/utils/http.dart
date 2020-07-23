@@ -65,7 +65,7 @@ class HttpUtil {
         var context = e.request.extra["context"];
         if (context != null) {
           switch (eInfo.code) {
-            case 401: // 没有权限 重新登录
+            case 301: // 没有权限 重新登录
               print('去登录');
               break;
             default:
@@ -166,6 +166,7 @@ ErrorEntity createErrorEntity(DioError error) {
       {
         try {
           int errCode = error.response.statusCode;
+          print(errCode);
           // String errMsg = error.response.statusMessage;
           // return ErrorEntity(code: errCode, message: errMsg);
           switch (errCode) {
