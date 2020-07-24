@@ -16,6 +16,8 @@ class Routes {
   static String me = '/me';
   static String everyDayRec = '/everyDayRec';
   static String songList = '/songList';
+  static String rank = '/rank';
+  static String dj = '/dj';
 
   static void configRoutes(Router router){
     router.notFoundHandler = new Handler(
@@ -30,6 +32,8 @@ class Routes {
     router.define(me, handler: meHandler);   //首页
     router.define(everyDayRec, handler: everyDayRecHandler);   //每日推荐
     router.define(songList, handler: songListHandler);  //歌单广场
+    router.define(rank, handler: rankHandler);  //排行榜
+    router.define(dj, handler: djHandler);  //电台
   }
 
   

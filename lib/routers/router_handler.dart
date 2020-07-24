@@ -4,7 +4,9 @@
  * @Date: 2020-07-23 22:30:13
  * @LastEditTime: 2020-07-23 23:07:29
  */ 
-import 'package:dolphinmusic/pages/discovery_page/every_day_recommend/index_page.dart';
+import 'package:dolphinmusic/pages/dj/dj_page.dart';
+import 'package:dolphinmusic/pages/discovery_page/every_day/index_page.dart';
+import 'package:dolphinmusic/pages/discovery_page/rank/rank.dart';
 import 'package:dolphinmusic/pages/discovery_page/song_list/song_list_page.dart';
 import 'package:dolphinmusic/pages/index_page.dart';
 import 'package:dolphinmusic/pages/me/me_page.dart';
@@ -45,3 +47,16 @@ Handler songListHandler = Handler(
     return SongListPage();
   }
 );
+//排行榜
+Handler rankHandler = Handler(
+  handlerFunc: (BuildContext context, Map<String,List<String>> params){
+    return RankPage();
+  }
+);
+//电台
+Handler djHandler = Handler(
+  handlerFunc: (BuildContext context, Map<String,List<String>> params){
+    return DjPage();
+  }
+);
+

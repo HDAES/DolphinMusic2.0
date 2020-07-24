@@ -23,8 +23,7 @@ class HttpUtil {
     BaseOptions options = new BaseOptions(
       // 请求基地址,可以包含子路径
       baseUrl: SERVER_API_URL,
-
-      // baseUrl: storage.read(key: STORAGE_KEY_APIURL) ?? SERVICE_API_BASEURL,
+      
       //连接服务器超时时间，单位是毫秒.
       connectTimeout: 10000,
 

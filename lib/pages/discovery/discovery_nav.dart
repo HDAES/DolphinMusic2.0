@@ -19,9 +19,9 @@ class DiscoveryNav extends StatefulWidget {
 class _DiscoveryNavState extends State<DiscoveryNav> {
   final List<Map> nav=[
     {"id":2,'icon':P.icon_playlist,'name':'歌单',"routepath":Routes.songList},
-    {"id":3,'icon':P.icon_rank,'name':'排行榜',"routepath":Routes.songList},
-    {"id":4,'icon':P.icon_radio,'name':'电台',"routepath":Routes.songList},
-    {"id":5,'icon':P.icon_look,'name':'直播',"routepath":Routes.songList},
+    {"id":3,'icon':P.icon_rank,'name':'排行榜',"routepath":Routes.rank},
+    {"id":4,'icon':P.icon_radio,'name':'电台',"routepath":Routes.dj},
+    {"id":5,'icon':P.icon_look,'name':'直播',"routepath":Routes.rank},
   ];
 
   DateTime dateTime= DateTime.now();

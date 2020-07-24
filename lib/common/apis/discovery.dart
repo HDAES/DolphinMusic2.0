@@ -61,7 +61,7 @@ class DiscoveryApi {
   }
 
   /// 推荐专辑
- static Future<NewAlbumsModel> getNewAlbums({@required BuildContext context}) async{
+  static Future<NewAlbumsModel> getNewAlbums({@required BuildContext context}) async{
     var response = await HttpUtil().get(
       '/album/newest',
       context: context,
@@ -69,4 +69,12 @@ class DiscoveryApi {
     return NewAlbumsModel.fromJson(response);
   }
   
+  ///排行榜
+  static Future<TopListModel> getTopList({@required BuildContext context}) async{
+    var response = await HttpUtil().get(
+      '/toplist/detail',
+      context: context,
+    );
+    return TopListModel.fromJson(response);
+  }
 }

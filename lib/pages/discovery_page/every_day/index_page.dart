@@ -3,8 +3,6 @@ import 'dart:ui';
 import 'package:dolphinmusic/common/apis/apis.dart';
 import 'package:dolphinmusic/common/utils/screen.dart';
 import 'package:dolphinmusic/common/widgets/music_item_widget.dart';
-import 'package:dolphinmusic/global.dart';
-import 'package:dolphinmusic/model/model.dart';
 import 'package:flutter/material.dart';
 
 class EveryDayRecommendPage extends StatefulWidget {
@@ -12,18 +10,13 @@ class EveryDayRecommendPage extends StatefulWidget {
   _EveryDayRecommendPageState createState() => _EveryDayRecommendPageState();
 }
 
-class _EveryDayRecommendPageState extends State<EveryDayRecommendPage> with SingleTickerProviderStateMixin{
+class _EveryDayRecommendPageState extends State<EveryDayRecommendPage> with AutomaticKeepAliveClientMixin {
 
-  TabController tabController;
 
-  @override
-  void initState() {
-    super.initState();
-    this.tabController = TabController(length: 2, vsync: this);
-  }
-
+  bool get wantKeepAlive => true;
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Scaffold(
       body:FutureBuilder(
         future: getData(context),

@@ -11,3 +11,4 @@ export 'discovery.dart';
 export 'mine.dart';
 export 'dynamic.dart';
 export 'me.dart';
+export 'dj.dart';
