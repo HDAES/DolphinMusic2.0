@@ -93,13 +93,9 @@ class SliverCustomHeaderDelegate extends SliverPersistentHeaderDelegate {
   double setOpacity(shrinkOffset){
     if(shrinkOffset <= 50) {
       return 0.3;
-    } else if(shrinkOffset<140&&shrinkOffset >= 50) {
-      //print(shrinkOffset);
-      return shrinkOffset/234;
-    }else if(shrinkOffset>=140){
+    } else{
       return 0.6;
     }
-    return 0;
   }
 
   double setDayOpacity(shrinkOffset){

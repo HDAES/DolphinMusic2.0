@@ -8,6 +8,7 @@ import 'package:dolphinmusic/pages/dj/dj_page.dart';
 import 'package:dolphinmusic/pages/discovery_page/every_day/index_page.dart';
 import 'package:dolphinmusic/pages/discovery_page/rank/rank.dart';
 import 'package:dolphinmusic/pages/discovery_page/song_list/song_list_page.dart';
+import 'package:dolphinmusic/pages/dj/dj_sort_page.dart';
 import 'package:dolphinmusic/pages/index_page.dart';
 import 'package:dolphinmusic/pages/me/me_page.dart';
 import 'package:flutter/material.dart';
@@ -59,4 +60,9 @@ Handler djHandler = Handler(
     return DjPage();
   }
 );
-
+//电台分类页面
+Handler djSortHandler = Handler(
+  handlerFunc: (BuildContext context, Map<String,List<String>> params){
+    return DjSortPage();
+  }
+);

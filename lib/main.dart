@@ -1,5 +1,6 @@
 import 'package:dolphinmusic/common/values/values.dart';
 import 'package:dolphinmusic/pages/demo/demo.dart';
+import 'package:dolphinmusic/provider/dj.dart';
 import 'package:dolphinmusic/provider/playlist.dart';
 import 'package:dolphinmusic/routers/application.dart';
 import 'package:dolphinmusic/routers/routes.dart';
@@ -15,7 +16,8 @@ void main()  async{
   runApp(MultiProvider(
       providers:[
         ChangeNotifierProvider(create: (context)=> Global.appState),
-        ChangeNotifierProvider(create:(context) =>PlayListProvider())
+        ChangeNotifierProvider(create:(context) =>PlayListProvider()),
+        ChangeNotifierProvider(create:(context) =>DjProvider())
       ],
       child: MyApp(),
     ));

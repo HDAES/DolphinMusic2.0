@@ -18,6 +18,7 @@ class Routes {
   static String songList = '/songList';
   static String rank = '/rank';
   static String dj = '/dj';
+  static String djSort = '/djSort';
 
   static void configRoutes(Router router){
     router.notFoundHandler = new Handler(
@@ -34,6 +35,7 @@ class Routes {
     router.define(songList, handler: songListHandler);  //歌单广场
     router.define(rank, handler: rankHandler);  //排行榜
     router.define(dj, handler: djHandler);  //电台
+    router.define(djSort, handler: djSortHandler);  //电台分类
   }
 
   

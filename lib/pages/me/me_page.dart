@@ -274,7 +274,6 @@ class SliverCustomHeaderDelegate extends SliverPersistentHeaderDelegate {
 Widget _mine(context){
   return Consumer<PlayListProvider>(
     builder:  (context, playlist, child){
-      print(playlist.playlist);
       return Container(
         color: Colors.white,
         child: Column(

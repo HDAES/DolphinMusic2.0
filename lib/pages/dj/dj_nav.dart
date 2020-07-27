@@ -1,4 +1,5 @@
 import 'package:dolphinmusic/common/values/values.dart';
+import 'package:dolphinmusic/routers/routes.dart';
 import 'package:flutter/material.dart';
 
 import '../../global.dart';
@@ -10,10 +11,10 @@ class DjNavWidget extends StatefulWidget {
 
 class _DjNavWidgetState extends State<DjNavWidget> {
    final List<Map> nav=[
-    {"id":1,'icon':P.dj_sort,'name':'电台分类'},
-    {"id":2,'icon':P.dj_rank,'name':'电台排行'},
-    {"id":3,'icon':P.dj_menber,'name':'付费精品'},
-    {"id":4,'icon':P.dj_study,'name':'主播学院'},
+    {"id":1,'icon':P.dj_sort,'name':'电台分类',"routerPath":Routes.djSort},
+    {"id":2,'icon':P.dj_rank,'name':'电台排行',"routerPath":Routes.djSort},
+    {"id":3,'icon':P.dj_menber,'name':'付费精品',"routerPath":Routes.djSort},
+    {"id":4,'icon':P.dj_study,'name':'主播学院',"routerPath":Routes.djSort},
   ];
   @override
   Widget build(BuildContext context) {
@@ -22,7 +23,7 @@ class _DjNavWidgetState extends State<DjNavWidget> {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: nav.map((item){
         return GestureDetector(
-            onTap: (){ },
+            onTap: (){Routes.navigateTo(context, item['routerPath']);},
             child: Container(
               margin: EdgeInsets.only(top:15),
               child: Column(

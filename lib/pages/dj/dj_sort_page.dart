@@ -1,25 +1,31 @@
-import 'package:dolphinmusic/common/apis/apis.dart';
 import 'package:dolphinmusic/common/utils/utils.dart';
 import 'package:dolphinmusic/common/values/values.dart';
-import 'package:dolphinmusic/model/model.dart';
 import 'package:dolphinmusic/provider/dj.dart';
-import 'package:dolphinmusic/provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class DjSortWidget extends StatefulWidget {
+class DjSortPage extends StatefulWidget {
   @override
-  _DjSortWidgetState createState() => _DjSortWidgetState();
+  _DjSortPageState createState() => _DjSortPageState();
 }
 
-class _DjSortWidgetState extends State<DjSortWidget> {
+class _DjSortPageState extends State<DjSortPage> {
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
-      future: getSort(context),
-      builder: (BuildContext context, AsyncSnapshot snapshot){
-        if (snapshot.hasData) {
-          return Container(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('电台分类',style: TextStyle(color: Colors.black)),
+        centerTitle: true,
+        backgroundColor: Colors.white,
+        leading: GestureDetector(
+          onTap: (){ Navigator.pop(context);},
+          child: Icon(Icons.arrow_back_ios,color: Colors.black),
+        ),
+      ),
+      body:Consumer<DjProvider>(
+        builder:  (context, data, child){
+          return 
+          Container(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -37,10 +43,10 @@ class _DjSortWidgetState extends State<DjSortWidget> {
                         padding: EdgeInsets.only(left: duSetWidth(40)),
                         child: Row(
                           children: <Widget>[
-                            Image.network(snapshot.data.categories[i].pic96x96Url,color: Colors.black87,width:24),
+                            Image.network(data.djSort.categories[i].pic96x96Url,color: Colors.black87,width:24),
                             Padding(
                               padding: EdgeInsets.only(left:5),
-                              child: Text(snapshot.data.categories[i].name,style: TextStyle(color: Colors.black87)),
+                              child: Text(data.djSort.categories[i].name,style: TextStyle(color: Colors.black87)),
                             )
                           ],
                         ),
@@ -60,7 +66,7 @@ class _DjSortWidgetState extends State<DjSortWidget> {
                 ),
                 Wrap(
                   children:[
-                    for(int i=6;i<snapshot.data.categories.length;i++)
+                    for(int i=6;i<data.djSort.categories.length;i++)
                       Container(
                         alignment: Alignment.centerLeft,
                         width:duSetWidth(375),
@@ -68,10 +74,10 @@ class _DjSortWidgetState extends State<DjSortWidget> {
                         padding: EdgeInsets.only(left: duSetWidth(40)),
                         child: Row(
                           children: <Widget>[
-                            Image.network(snapshot.data.categories[i].pic96x96Url,color: Colors.black87,width:24),
+                            Image.network(data.djSort.categories[i].pic96x96Url,color: Colors.black87,width:24),
                             Padding(
                               padding: EdgeInsets.only(left:8),
-                              child: Text(snapshot.data.categories[i].name,style: TextStyle(color: Colors.black87)),
+                              child: Text(data.djSort.categories[i].name,style: TextStyle(color: Colors.black87)),
                             )
                           ],
                         ),
@@ -79,7 +85,7 @@ class _DjSortWidgetState extends State<DjSortWidget> {
                           border: Border(
                             top:BorderSide(width: 1,color: AppColors.interval),
                             right: BorderSide(width: 1,color: AppColors.interval),
-                            bottom:BorderSide(width:i==snapshot.data.categories.length-1||i==snapshot.data.categories.length-2?1:0,color: AppColors.interval),
+                            bottom:BorderSide(width:i==data.djSort.categories.length-1||i==data.djSort.categories.length-2?1:0,color: AppColors.interval),
                           )
                         ),
                       )
@@ -88,16 +94,8 @@ class _DjSortWidgetState extends State<DjSortWidget> {
               ],
             ),
           );
-        }else{
-          return Text('loading');
         }
-      }
+      )
     );
-  }
-
-  Future getSort(context) async{
-    DjSortModel djSort = await DjApi.getDjSort(context: context);
-    Provider.of<DjProvider>(context,listen: false).setDjSort(djSort);
-    return  djSort;
   }
 }

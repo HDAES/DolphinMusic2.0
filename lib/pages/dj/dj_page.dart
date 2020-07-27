@@ -1,9 +1,8 @@
-import 'package:dolphinmusic/common/values/values.dart';
 import 'package:dolphinmusic/pages/dj/dj_banner.dart';
 import 'package:flutter/material.dart';
-
-import '../../global.dart';
 import 'dj_nav.dart';
+import 'dj_pay_toplist.dart';
+import 'dj_perfered.dart';
 import 'dj_sort.dart';
 
 class DjPage extends StatefulWidget {
@@ -28,7 +27,10 @@ class _DjPageState extends State<DjPage> {
         children: <Widget>[
           DjBannerWidget(),
           DjNavWidget(),
-          DjSortWidget()
+          DjPerferedWidget(),
+          DjPayTopListWidget(),
+          DjSortWidget(),
+          
         ],
       ),
     );
